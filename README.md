@@ -1,13 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application counts the number of cars in a lot using a video camera feed as the source.
 
 Things you may want to cover:
+Software:
+* Ruby version 2.3.3p222
+* Rails version 5.1.4
+* mySQL version ??
 
-* Ruby version
-
-* System dependencies
 
 * Configuration
 
