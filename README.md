@@ -6,7 +6,8 @@ Things you may want to cover:
 Software:
 * Ruby version 2.3.3p222
 * Rails version 5.1.4
-* mySQL version ??
+* mySQL version 5.7.17
+
 
 
 * Configuration
