@@ -1,0 +1,89 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<header>
+  <h1>Parking Buddy</h1>
+</header>
+<%= form_with scope: :article, local: true do |form| %>
+    <ul>
+        <li>
+            <table style="width:100%">
+            <tr style="white-space: nowrap">
+                <th><h1>Camera Settings</h1></th>
+            </tr>
+            <tr>
+                    <th style="white-space: nowrap">Cam ID</th>
+                    <th style="white-space: nowrap">Cam Name</th> 
+                    <th style="white-space: nowrap">Video Type</th>
+                    <th style="white-space: nowrap">Resolution</th>
+                    <th style="white-space: nowrap">Frame Per Second</th> 
+                    <th style="white-space: nowrap">Lot</th>
+                </tr>
+            <% @camera_list.each do |cam|%>
+                <tr>
+                    <td style="text-align:center;white-space: nowrap;"><%= cam["Cam_ID"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Cam_Name" value="<%= cam["Cam_Name"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Video_Type" value="<%= cam["Video_Type"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Resolution" value="<%= cam["Resolution"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Frame_Per_Second" value="<%= cam["Frame_Per_Second"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="L_ID" value="<%= cam["L_ID"] %>"></td>
+                </tr>
+            <% end %>
+            
+            </table>
+        </li>
+        <li>
+            <table style="width:100%">
+            <tr style="white-space: nowrap">
+                <th><h1>Lot Settings</h1></th>
+            </tr>
+            <tr>
+                    <th style="white-space: nowrap">Lot ID</th>
+                    <th style="white-space: nowrap">Lot Name</th> 
+                    <th style="white-space: nowrap">Capacity</th>
+                    <th style="white-space: nowrap">Space Type</th>
+                    <th style="white-space: nowrap">Space Position</th> 
+                    <th style="white-space: nowrap">Lot Template</th>
+                    <th style="white-space: nowrap">Address</th>
+                    <th style="white-space: nowrap">City</th> 
+                    <th style="white-space: nowrap">ZipCode</th>
+                    <th style="white-space: nowrap">File</th>
+                </tr>
+            <% @lot_list.each do |lot|%>
+                <tr>
+                    <td style="text-align:center;white-space: nowrap;"><%= lot["Lot_ID"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Lot_Name" value="<%= lot["Lot_Name"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Capacity" value="<%= lot["Capacity"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Space_Type" value="<%= lot["Space_Type"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Space_Position" value="<%= lot["Space_Position"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Lot_Template" value="<%= lot["Lot_Template"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Address" value="<%= lot["Address"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="City" value="<%= lot["City"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="ZipCode" value="<%= lot["ZipCode"] %>"></td>
+                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="File" value="<%= lot["File"] %>"></td>
+                </tr>
+            <% end %>
+            
+            </table>
+        </li>
+    </ul> 
+    <%= form.text_field :title , :value => "my default value"%>
+    <%= form.submit %>
+<% end %>
+  
+

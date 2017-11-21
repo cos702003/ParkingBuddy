@@ -2,137 +2,137 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f1f1f1;
-    
-    display: grid;
-    grid-template-rows: 4em auto 4em;
-    grid-template-columns: 13px 5fr 13px;
-    grid-template-areas:
-      "header header header"
-      "margin-left list margin-right"
-      "footer footer footer";
-    grid-gap: 0em;
-    font-family: sans-serif;
-    
-    @media screen and (min-width: 768px) {
-        grid-template-rows: 4em 1fr 4em;
-    grid-template-columns: 1fr 5fr 3fr 1fr;
-    grid-template-areas:
-      "header header header header"
-      "margin-left map list margin-right"
-      "footer footer footer footer";
-    grid-gap: 0.75em;
-    }
-  }
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
   
-  header {
-    grid-area: header;
-    background-color: transparent;
-    
-    text-align: left;
-    margin-left: 12px;
-    
-    @media screen and (min-width: 768px) {
-      text-align: center;
-    }
-    
-    h1 {
-      color: #333;
-    }
-  }
+  display: grid;
+  grid-template-rows: 4em auto 4em;
+  grid-template-columns: 13px 5fr 13px;
+  grid-template-areas:
+    "header header header"
+    "margin-left list margin-right"
+    "footer footer footer";
+  grid-gap: 0em;
+  font-family: sans-serif;
   
-  nav {
-    position: relative;
-    display: inline-block;
-    right: 0;
-    top: 0;
-    
-    @media screen and (min-width: 768px) {
-      position: absolute;
-      right: 1em;
-      top: 1.5em;
-      height: 4em;
-    }
+  @media screen and (min-width: 768px) {
+      grid-template-rows: 4em 1fr 4em;
+  grid-template-columns: 1fr 5fr 3fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    "margin-left map list margin-right"
+    "footer footer footer footer";
+  grid-gap: 0.75em;
   }
+}
+
+header {
+  grid-area: header;
+  background-color: transparent;
   
-  .button {
-    background: #3D8FC8;
-    padding: 0.6em 1.4em;
-    margin: 1em;
-    border-radius: 4px;
-    
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 200;
+  text-align: left;
+  margin-left: 12px;
+  
+  @media screen and (min-width: 768px) {
+    text-align: center;
   }
   
   h1 {
-    font-size: 2em;
-    line-height: 1em;
-    margin-top: 0.5em;
-    
+    color: #333;
   }
+}
+
+nav {
+  position: relative;
+  display: inline-block;
+  right: 0;
+  top: 0;
   
-  #lot-list {
-  
-    grid-area: list;
-    width: 100%;
-    height: 100%;
-    
-    .label-container {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.6em;
-      margin: 0.5em;
-      text-align: center;
-      vertical-align: bottom;
-      
-      color: #404040;
-    }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: 1em;
+    top: 1.5em;
+    height: 4em;
   }
+}
+
+.button {
+  background: #3D8FC8;
+  padding: 0.6em 1.4em;
+  margin: 1em;
+  border-radius: 4px;
   
-  .lot-item {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 0.5em;
+  
+}
+
+#lot-list {
+
+  grid-area: list;
+  width: 100%;
+  height: 100%;
+  
+  .label-container {
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    overflow: hidden;
+    font-size: 0.6em;
+    margin: 0.5em;
+    text-align: center;
+    vertical-align: bottom;
     
-    margin-bottom: 0.5em;
-    
-    h2 {
-      padding: 1.75em 2em;
-      color: #404040;
-    }
-    
-    .number {
-      font-size: 1.5em;
-      padding: 1em 1em;
-      text-align: center;
-      color: #404040;
-    }
-    
-    &.open {
-      background-color: #E2EFDA;
-    }
+    color: #404040;
+  }
+}
+
+.lot-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
   
-    &.warning {
-      background-color: #FCF8E5;
-    }
+  margin-bottom: 0.5em;
   
-    &.full {
-      background-color: #EFDFDE;
-    }
+  h2 {
+    padding: 1.75em 2em;
+    color: #404040;
   }
   
-  map {
-    background-color: white;
-    grid-area: map;
-    
-    width: 100%;
-    height: 100%;
+  .number {
+    font-size: 1.5em;
+    padding: 1em 1em;
+    text-align: center;
+    color: #404040;
   }
+  
+  &.open {
+    background-color: #E2EFDA;
+  }
+
+  &.warning {
+    background-color: #FCF8E5;
+  }
+
+  &.full {
+    background-color: #EFDFDE;
+  }
+}
+
+map {
+  background-color: white;
+  grid-area: map;
+  
+  width: 100%;
+  height: 100%;
+}

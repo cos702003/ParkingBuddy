@@ -1,25 +1,13 @@
 <header>
   <h1>Parking Buddy</h1>
 </header>
-<nav>
-    <a href="#" class="button">Login</a>
-</nav>
-<map></map>
 <ul id="lot-list">
-  <div class="label-container">
-    <label>Lot Name</label>
-    <label>Spaces Available</label>
-  </div>
+
+<% @results.each do |key, value| %>
   <li class="lot-item open">
-    <h2>C-Science</h2>
-    <h3 class="number">39</h3>
+    <h2> <%= key %></h2>
+    <h3 class="number">Spaces avalable <%= value %></h3>
   </li>
-  <li class="lot-item warning">
-    <h2>C-Verder</h2>
-    <h3 class="number">7</h3>
-  </li>
-    <li class="lot-item full">
-    <h2>R-15 </h2>
-    <h3 class="number">0</h3>
-  </li>
+<% end %>
+  
 </ul>   
