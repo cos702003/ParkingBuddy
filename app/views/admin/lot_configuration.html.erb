@@ -17,8 +17,9 @@ tr:nth-child(even) {
 
 <header>
   <h1>Parking Buddy</h1>
+  <p>Lot Configuration</p>
 </header>
-    <ul id="lot-list">
+    <ul id="lot-list" style=" margin-top: 1cm">
     <li class="lot-item open">
             <table style="width:100%">
             <tr style="white-space: nowrap">
@@ -48,35 +49,9 @@ tr:nth-child(even) {
                     <td style="text-align:center;white-space: nowrap;"><input type="text" name="File" value="<%= lot["File"] %>"></td>
                 </tr>
             <% end %>
-            
             </table>
         </li>
-        <li class="lot-item open">
-            <table style="width:100%">
-            <tr style="white-space: nowrap">
-                <th><h1>Camera Settings</h1></th>
-            </tr>
-            <tr>
-                    <th style="white-space: nowrap">Cam ID</th>
-                    <th style="white-space: nowrap">Cam Name</th> 
-                    <th style="white-space: nowrap">Video Type</th>
-                    <th style="white-space: nowrap">Resolution</th>
-                    <th style="white-space: nowrap">Frame Per Second</th> 
-                    <th style="white-space: nowrap">Lot</th>
-                </tr>
-            <% @camera_list.each do |cam|%>
-                <tr>
-                    <td style="text-align:center;white-space: nowrap;"><%= cam["Cam_ID"] %></td>
-                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Cam_Name" value="<%= cam["Cam_Name"] %>"></td>
-                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Video_Type" value="<%= cam["Video_Type"] %>"></td>
-                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Resolution" value="<%= cam["Resolution"] %>"></td>
-                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="Frame_Per_Second" value="<%= cam["Frame_Per_Second"] %>"></td>
-                    <td style="text-align:center;white-space: nowrap;"><input type="text" name="L_ID" value="<%= cam["L_ID"] %>"></td>
-                </tr>
-            <% end %>
-            
-            </table>
+        <li>
+            <input type="submit" value="Save Settings">
         </li>
     </ul> 
-  
-
