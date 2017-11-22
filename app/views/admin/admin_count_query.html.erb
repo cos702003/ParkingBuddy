@@ -1,0 +1,79 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin-left: 4cm;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<header>
+  <h1>Parking Buddy</h1>
+  <p>admin query</p>
+</header>
+
+<div style="margin-top: 1cm;">
+    <form action="/count_query">
+    From
+    Month:
+    <input type="number" name="from_Month" value="<%=@from_Month%>">
+    Day:
+    <input type="number" name="from_Day" value="<%=@from_Day%>">
+    Year:
+    <input type="number" name="from_Year" value="<%=@from_Year%>">
+    Time(miltary)
+    <input type="number" name="from_Time" value="<%=@from_Time%>">
+    <br><br>
+    To
+    Month:
+    <input type="number" name="to_Month" value="<%=@to_Month%>">
+    Day:
+    <input type="number" name="to_Day" value="<%=@to_Day%>">
+    Year:
+    <input type="number" name="to_Year" value="<%=@to_Year%>">
+    Time(miltary)
+    <input type="number" name="to_Time" value="<%=@to_Time%>">
+    <br><br>
+    Count:
+    <input type="number" name="count" value="<%=@count%>">
+    <select type="number" name="gl_than" value="<">
+        <option value="<">Less Than (<)</option>
+        <option value=">">Grater Than (>)</option>
+    </select>
+    <input type="submit" value="Submit">
+    </form> 
+</div>
+<div>
+  <table style="width:100%">
+            <tr style="white-space: nowrap">
+                <th><h1>Results</h1></th>
+            </tr>
+            <tr>
+                    <th style="text-align:center;white-space: nowrap">Log ID</th>
+                    <th style="text-align:center;white-space: nowrap">TimeStamp</th> 
+                    <th style="text-align:center;white-space: nowrap">Count</th>
+                    <th style="text-align:center;white-space: nowrap">Lot ID</th>
+                    <th style="text-align:center;white-space: nowrap">Cam ID</th> 
+                </tr>
+            <% @resultes.each do |row|%>
+                <tr>
+                    <td style="text-align:center;white-space: nowrap;"><%= row["Log_ID"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><%= row["TimeStamp"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><%= row["Count"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><%= row["Lot_ID"] %></td>
+                    <td style="text-align:center;white-space: nowrap;"><%= row["Cam_ID"] %></td>
+                </tr>
+            <% end %>
+            
+            </table>
+</div>
+

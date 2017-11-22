@@ -13,9 +13,13 @@ Rails.application.routes.draw do
   #query views
   get 'query' => 'admin#admin_query'
   get 'admin_query' => 'admin#admin_query'
+  get 'count_query' => 'admin#admin_count_query'
 
   #login views
   get 'admin' => 'admin#login'
   get 'login' => 'admin#login'
+
+
+  get 'admin_home' => 'admin#main_menu'
 
 end
